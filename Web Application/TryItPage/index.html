@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Directory</title>
+</head>
+<body>
+    <h1>Service Directory</h1>
+    <p>This page lists all the required and elective services from all members of the team.</p>
+    <h2>Team Members</h2>
+    <ul>
+        <li>Wei-Chieh Lee</li>
+        <li>Revanth Harinarthini</li>
+        <li>Ta-shen, Chen</li>
+    </ul>
+    <h2>List of Services</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Provider Name</th>
+                <th>Service Name</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th>TryIt Link</th>
+                <th>Description</th>
+                <th>Resources Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Required Service -
+                    WsHashOperations
+                    <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/wshash?wsdlUrl=http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL">API TestLink</a>
+                </td>
+                <td>
+                    String WSDL Urls - Sample Inputs -
+                    WSDL Urls -
+                    http://www.dneonline.com/calculator.asmx?WSDL
+                </td>
+                <td>String with hash of all the operation names and respective intput and output parameters</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>This service takes a WSDL url, downloads the wsdl file and calculates its hash which contains a dictionary of operations and their respective input and output parameters.</td>
+                <td>- Write code to download the WSDL file as string parse it as XML format and return a dictionary with operation names as key and input and output parameters array as a value.</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Required Service -
+                    Find the Nearest Store
+                    Input: Integer - Zip code
+                    Output: String - Address of the Nearest Store if any
+                    <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/nearestStore?zipCode=85281&StoreName=McDonalds">API TestLink</a>
+                </td>
+                <td>
+                    Int ZipCode, String Store Name
+                    Sample Inputs - Zipcode=85281, Storename=McDonalds
+                </td>
+                <td>String with address of the first nearest store</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>This service takes zipcode and store name as inputs and gives the address of the nearest store address as a string. First, it fetches the latitude and longitude using the zipcode and Zippopotam API (http://api.zippopotam.us/). This latitude and longitude is given as input to foursquare API (https://api.foursquare.com/v3/places/nearby?ll=) and return the first nearest store address as a string.</td>
+                <td>
+                    - Zippopotam API: Fetch Latitude and Longitude using Zip Code.
+                    - FourSquare API: Fetch the nearest store address based on the provided store name, latitude and longitude.
+                    - Write code to utilize these services and return required address only.
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Elective Service(Difficult) -
+                    User Registration  & Authentication Service
+                    <a href="http://webstrar183.fulton.asu.edu/page5/Service1.svc">Web Service Link</a>
+                </td>
+                <td>
+                    Login API - String username, String password, Registration API - String username, String password, String FirstName, String LastName
+                    Sample Inputs - Login: username: hello, password: hello
+                </td>
+                <td>String with status of the login or registration</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>
+                    This service collects all the user related information such as
+                    Input -
+                    Required
+                    Username (string)
+                    Password (string)
+                    Optional
+                    username (string)
+                    password (string)
+                    firstName (string)
+                    lastName (string)
+
+                    It allows new users to register by providing all the details.
+                    It also allows the service to authenticate users.
+                </td>
+                <td>
+                    File System to store and fetch user details to register new users and authenticate old users.
+                    Encryption service to store encrypted passwords in the file instead of exact passwords.
+                    Implementation Code
+                    - Check if the username is not previously used
+                    - Check if the password matches with encrypted password for login
+                    - Return appropriate status
+
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Elective Service(Difficult) -
+                    1)Menu Listing Service: Get Menu By Restaurant Name <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/getRestaurantMenu?restaurantName=Italiano">API Test Link</a>
+                    2)Menu Listing Service: Get All available items filtered by type <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/getItemByType?itemType=Entree">API Test Link</a>
+                    3)Menu Listing Service: Get All available items less than a price <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/getItemsLessThanPrice?maxPrice=10">API Test Link</a>
+                </td>
+                <td>
+                    1)Get Menu By Restaurant Name - String Restaurant Name (Sample Inputs: Italiano, Sushi_Spot, Thai_Palace, BBQ_Pit, The_Sushi_Bar, The_Pasta_House, The_Steakhouse)
+                    2)Get All available items filtered by type - String Item Type (Sample Inputs: Appetizer, Entree, Dessert)
+                    3)Get All available items less than a price - Int maximum price(Sample Inputs: 5, 10, 15, 20)
+                </td>
+                <td>
+                    1)Get Menu By Restaurant: List of menu items
+                    2)Get All available items filtered by type: List of tuples with first element as restaurant name and second element as menu item
+                    3)Get All available items less than a price: List of tuples with first element as restaurant name and second element as menu item
+                </td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>
+                    1)Get Menu By Restaurant: This service checks for a restaurant matching the exact name, collects all the menu items and then uses spoonacular API to get the nutritional information of the dish for customers to make healthy choices.
+                    2)Get All available items filtered by type: This service gets all the items matching a particular type like Entree to from all the restaurants to make it easier for the user to choose from and order at multiple restaurants
+                    3)Get All available items less than a price: This service would be helpful when dealing with a budget and looking for items which are less than a particular price.
+                </td>
+                <td>
+                    Write my own code to get all the restaurant details make an 3rd party API request to Spoonacular API for each item and get the nutritional information and append it to the response object.
+                    - Fetch the relevant restaurant menu.
+                    - Find the items which belong to the section
+                    - Return all the items and their prices.
+
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Wei-Chieh Lee</td>
+                <td>
+                    Required Service
+                    Word Count
+                    Output: String
+                </td>
+                <td>
+                    Input - Text File
+                </td>
+                <td>String with occurrences of each word</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page10/TryIt">TryIt</a></td>
+                <td>
+                    This service takes a text file, removes punctuation, and calculates the occurrence of each word.
+                    Input: A Text File
+                    Output: Word count in the format “Word(String): Occurrence(int)\n” in chronological order.
+
+                </td>
+                <td>
+                    Write my own code and use local component to implement the service
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Wei-Chieh Lee</td>
+                <td>
+                    Required Service
+                    News Focus
+                    Output: List of String
+                </td>
+                <td>
+                    Input - String Keywords
+                </td>
+                <td>String with links to relevant news</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page10/TryIt">TryIt</a></td>
+                <td>
+                    This service takes one or more keywords and prints all relevant News.
+                    Input: “Keyword” or “Keyword1, Keyword2, …”
+                    Output:
+                    Keyword1:
+                    Relevant url1
+                    Relevant url2
+                    …
+                    Keyword2:
+                    Relevant url1
+                    Relevant url2
+                    …
+
+                </td>
+                <td>
+                    Search the News using service NewsAPI: https://newsapi.org/
+                    This open API takes a package which has the request keyword and the some other conditions and return urls based on the customized conditions.
+
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Wei-Chieh Lee</td>
+                <td>
+                    Elective Service
+                    Order Placement
+                </td>
+                <td>
+                    Input - String Keywords
+                </td>
+                <td>String with links to relevant news</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page10/TryIt">TryIt</a></td>
+                <td>
+                    This service takes one or more keywords and prints all relevant News.
+                    Input: “Keyword” or “Keyword1, Keyword2, …”
+                    Output:
+                    Keyword1:
+                    Relevant url1
+                    Relevant url2
+                    …
+                    Keyword2:
+                    Relevant url1
+                    Relevant url2
+                    …
+
+                </td>
+                <td>
+                    Search the News using service NewsAPI: https://newsapi.org/
+                    This open API takes a package which has the request keyword and the some other conditions and return urls based on the customized conditions.
+
+                </td>
+            </tr>
+            <tr></tr>
+            <!-- Add more services if necessary -->
+        </tbody>
+    </table>
+</body>
+</html>
+
+

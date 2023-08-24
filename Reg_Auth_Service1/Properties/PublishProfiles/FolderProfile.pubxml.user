@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\rharinar\OneDrive - Arizona State University\CSE-445 Distributed Software development\Reg_Auth_Service\Reg_Auth_Service1\bin\app.publish\</_PublishTargetUrl>
+    <History>True|2023-03-19T09:06:39.8338225Z;True|2023-03-19T01:28:21.7039975-07:00;True|2023-03-18T16:50:18.4718454-07:00;True|2023-03-18T16:48:28.3595054-07:00;True|2023-03-18T16:46:34.2895873-07:00;True|2023-03-18T16:44:18.7728531-07:00;True|2023-03-18T16:41:42.9964623-07:00;True|2023-03-18T16:39:39.2473207-07:00;True|2023-03-18T16:37:53.2040890-07:00;True|2023-03-18T16:33:54.5021794-07:00;True|2023-03-18T16:21:19.0188215-07:00;True|2023-03-18T16:19:20.3492708-07:00;True|2023-03-18T16:12:43.9732236-07:00;True|2023-03-18T16:10:21.0429013-07:00;True|2023-03-18T16:01:55.3140789-07:00;True|2023-03-18T11:00:44.2401555-07:00;True|2023-03-18T10:53:43.4301880-07:00;True|2023-03-18T10:46:34.0886802-07:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Reg_Auth_Service1.dll">
+      <publishTime>03/19/2023 02:06:37</publishTime>
+    </File>
+    <File Include="bin/Reg_Auth_Service1.pdb">
+      <publishTime>03/19/2023 02:06:37</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>03/17/2023 19:22:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/18/2023 16:10:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

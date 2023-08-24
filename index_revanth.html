@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service And Components Summary</title>
+</head>
+<body>
+    <h1>Service And Components Summary</h1>
+    <p>This page lists all the services and components developed by Revanth.</p>
+    <h2>List of Services and components</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Provider Name</th>
+                <th>Service Name</th>
+                <th>Input</th>
+                <th>Output</th>
+                <th>TryIt Link</th>
+                <th>Description</th>
+                <th>Resources Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Local Component: <strong>DLL</strong> for Hashing
+                </td>
+                <td>
+                    1)Generate Salt
+                    <br />2)Hash Password
+                    <br />3)Verify Password
+                </td>
+                <td>
+                    1)Salt for encryption as string
+                    <br />2)Hashed Password as string
+                    <br />3)Verification status as boolean
+                </td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>
+                    This component is for hashing the password and verify the password.
+                </td>
+                <td>
+                    Used RNGCryptoServiceProvider to generate salt.
+                    <br /> Password is salted using the SHA256 encryption algorithm
+                    <br /> Password and hashed password are verified.
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Local Component: <strong>Global.asax and XML File Manipulation</strong> for logging incoming requests into log.xml file
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    Logs of all the requests made until then are displayed
+                </td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>
+                    This component can be tested on the Try It page where the latest contents of Log are displayed.
+                </td>
+                <td>
+                    Local log XML file is altered on every request made to the application.
+                    <br />It stores the following information about the request.
+                    <br />Timestamp
+                    <br />Url
+                    <br />Method
+                    <br />User Agent
+                    <br />Referrer
+                    <br />Ip Address
+                    <br />Ip Address
+                    <br />Status code
+                    <br />Stack Trace
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Remote Component: Find the Nearest Store
+                    <br />Input: Integer - Zip code
+                    <br />Output: String - Address of the Nearest Store if any
+                    <br /><a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/nearestStore?zipCode=85281&StoreName=McDonalds">API TestLink</a>
+                </td>
+                <td>
+                    Int ZipCode, String Store Name
+                    <br />Sample Inputs - Zipcode=85281, Storename=McDonalds
+                </td>
+                <td>String with address of the first nearest store</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>This service takes zipcode and store name as inputs and gives the address of the nearest store address as a string. First, it fetches the latitude and longitude using the zipcode and Zippopotam API (http://api.zippopotam.us/). This latitude and longitude is given as input to foursquare API (https://api.foursquare.com/v3/places/nearby?ll=) and return the first nearest store address as a string.</td>
+                <td>
+                    - Zippopotam API: Fetch Latitude and Longitude using Zip Code.
+                    <br />- FourSquare API: Fetch the nearest store address based on the provided store name, latitude and longitude.
+                    <br />- Write code to utilize these services and return required address only.
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Remote Component: User Registration  & Authentication Service
+                    <a href="http://webstrar183.fulton.asu.edu/page5/Service1.svc">Web Service Link</a>
+                </td>
+                <td>
+                    Login API - String username, String password, Registration API - String username, String password, String FirstName, String LastName
+                    <br />Sample Inputs - Login: username: hello, password: hello
+                </td>
+                <td>String with status of the login or registration</td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>
+                    This service collects all the user related information such as
+                    Input -
+                    Required
+                    Username (string)
+                    Password (string)
+                    Optional
+                    username (string)
+                    password (string)
+                    firstName (string)
+                    lastName (string)
+
+                    It allows new users to register by providing all the details.
+                    It also allows the service to authenticate users.
+                </td>
+                <td>
+                    <strong>Uses the hashing and verification functions from Hashing DLL developed in Local Component 1</strong>
+                    <br />File System to store and fetch user details to register new users and authenticate old users.
+                    <br />Encryption service to store encrypted passwords in the file instead of exact passwords.
+                    <br />Implementation Code
+                    <br />- Check if the username is not previously used
+                    <br />- Check if the password matches with encrypted password for login
+                    <br />- Return appropriate status
+
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>Revanth Harinarthni</td>
+                <td>
+                    Remote Component: 
+                    <br />1)Menu Listing Service: Get Menu By Restaurant Name <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/getRestaurantMenu?restaurantName=Italiano">API Test Link</a>
+                    <br />2)Menu Listing Service: Get All available items filtered by type <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/getItemByType?itemType=Entree">API Test Link</a>
+                    <br />3)Menu Listing Service: Get All available items less than a price <a href="http://webstrar183.fulton.asu.edu/page3/Service1.svc/getItemsLessThanPrice?maxPrice=10">API Test Link</a>
+                </td>
+                <td>
+                    1)Get Menu By Restaurant Name - String Restaurant Name (Sample Inputs: Italiano, Sushi_Spot, Thai_Palace, BBQ_Pit, The_Sushi_Bar, The_Pasta_House, The_Steakhouse)
+                    <br />2)Get All available items filtered by type - String Item Type (Sample Inputs: Appetizer, Entree, Dessert)
+                    <br />3)Get All available items less than a price - Int maximum price(Sample Inputs: 5, 10, 15, 20)
+                </td>
+                <td>
+                    1)Get Menu By Restaurant: List of menu items
+                    <br />2)Get All available items filtered by type: List of tuples with first element as restaurant name and second element as menu item
+                    <br />3)Get All available items less than a price: List of tuples with first element as restaurant name and second element as menu item
+                </td>
+                <td><a href="http://webstrar183.fulton.asu.edu/page4/tryIt.aspx">TryIt</a></td>
+                <td>
+                    1)Get Menu By Restaurant: This service checks for a restaurant matching the exact name, collects all the menu items and then uses spoonacular API to get the nutritional information of the dish for customers to make healthy choices.
+                    <br />2)Get All available items filtered by type: This service gets all the items matching a particular type like Entree to from all the restaurants to make it easier for the user to choose from and order at multiple restaurants
+                    <br />3)Get All available items less than a price: This service would be helpful when dealing with a budget and looking for items which are less than a particular price.
+                </td>
+                <td>
+                    Write my own code to get all the restaurant details make an 3rd party API request to Spoonacular API for each item and get the nutritional information and append it to the response object.
+                    <br />- Fetch the relevant restaurant menu.
+                    <br />- Find the items which belong to the section
+                    <br />- Return all the items and their prices.
+
+                </td>
+            </tr>
+            <!-- Add more services if necessary -->
+        </tbody>
+    </table>
+</body>
+</html>
+
+
